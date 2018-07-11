@@ -78,6 +78,7 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\libraries\Wire\src</Value>
       <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\SoftwareSerial\src</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -96,6 +97,7 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\libraries\Wire\src</Value>
       <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\SoftwareSerial\src</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
@@ -136,6 +138,7 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\libraries\Wire\src</Value>
       <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\SoftwareSerial\src</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -156,6 +159,7 @@
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
       <Value>..\include\libraries\Wire\src</Value>
       <Value>..\include\libraries\Wire\src\utility</Value>
+      <Value>..\include\libraries\SoftwareSerial\src</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
@@ -179,12 +183,6 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="include\libraries\Wire\src\utility\twi.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="include\libraries\Wire\src\Wire.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\Accelerometer.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -209,12 +207,6 @@
     <Compile Include="src\DataSender.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\libraries\Wire\src\utility\twi.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\libraries\Wire\src\Wire.cpp">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\main.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -223,17 +215,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ExternalCode\" />
     <Folder Include="include\" />
-    <Folder Include="include\libraries\" />
-    <Folder Include="include\libraries\Wire\" />
-    <Folder Include="include\libraries\Wire\src\" />
-    <Folder Include="include\libraries\Wire\src\utility\" />
     <Folder Include="src\" />
-    <Folder Include="src\libraries\" />
-    <Folder Include="src\libraries\Wire\" />
-    <Folder Include="src\libraries\Wire\src\" />
-    <Folder Include="src\libraries\Wire\src\utility\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
