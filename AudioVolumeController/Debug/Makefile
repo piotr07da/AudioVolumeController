@@ -33,17 +33,8 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
-../ExternalCode/ \
 ../include/ \
-../include/libraries/ \
-../include/libraries/Wire/ \
-../include/libraries/Wire/src/ \
-../include/libraries/Wire/src/utility/ \
-../src/ \
-../src/libraries/ \
-../src/libraries/Wire/ \
-../src/libraries/Wire/src/ \
-../src/libraries/Wire/src/utility/
+../src/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -52,8 +43,6 @@ C_SRCS +=  \
 ../src/Avc.cpp \
 ../src/DataReceiver.cpp \
 ../src/DataSender.cpp \
-../src/libraries/Wire/src/utility/twi.c \
-../src/libraries/Wire/src/Wire.cpp \
 ../src/main.cpp
 
 
@@ -68,8 +57,6 @@ src/Accelerometer.o \
 src/Avc.o \
 src/DataReceiver.o \
 src/DataSender.o \
-src/libraries/Wire/src/utility/twi.o \
-src/libraries/Wire/src/Wire.o \
 src/main.o
 
 OBJS_AS_ARGS +=  \
@@ -77,8 +64,6 @@ src/Accelerometer.o \
 src/Avc.o \
 src/DataReceiver.o \
 src/DataSender.o \
-src/libraries/Wire/src/utility/twi.o \
-src/libraries/Wire/src/Wire.o \
 src/main.o
 
 C_DEPS +=  \
@@ -86,8 +71,6 @@ src/Accelerometer.d \
 src/Avc.d \
 src/DataReceiver.d \
 src/DataSender.d \
-src/libraries/Wire/src/utility/twi.d \
-src/libraries/Wire/src/Wire.d \
 src/main.d
 
 C_DEPS_AS_ARGS +=  \
@@ -95,8 +78,6 @@ src/Accelerometer.d \
 src/Avc.d \
 src/DataReceiver.d \
 src/DataSender.d \
-src/libraries/Wire/src/utility/twi.d \
-src/libraries/Wire/src/Wire.d \
 src/main.d
 
 OUTPUT_FILE_PATH +=AudioVolumeController.elf
@@ -116,49 +97,35 @@ LINKER_SCRIPT_DEP+=
 src/Accelerometer.o: ../src/Accelerometer.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility" -I"..\include\libraries\SoftwareSerial\src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/Avc.o: ../src/Avc.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility" -I"..\include\libraries\SoftwareSerial\src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/DataReceiver.o: ../src/DataReceiver.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility" -I"..\include\libraries\SoftwareSerial\src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/DataSender.o: ../src/DataSender.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-src/libraries/Wire/src/utility/twi.o: ../src/libraries/Wire/src/utility/twi.c
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-src/libraries/Wire/src/Wire.o: ../src/libraries/Wire/src/Wire.cpp
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility" -I"..\include\libraries\SoftwareSerial\src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 src/main.o: ../src/main.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"..\include\libraries\Wire\src" -I"..\include\libraries\Wire\src\utility" -I"..\include\libraries\SoftwareSerial\src"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=atmega8  -c -lstdc++ -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

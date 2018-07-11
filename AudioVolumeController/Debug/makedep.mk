@@ -10,9 +10,5 @@ src\DataReceiver.cpp
 
 src\DataSender.cpp
 
-src\libraries\Wire\src\utility\twi.c
-
-src\libraries\Wire\src\Wire.cpp
-
 src\main.cpp
 
