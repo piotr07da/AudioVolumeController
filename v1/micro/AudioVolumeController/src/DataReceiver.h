@@ -18,6 +18,7 @@
 class IVolumeControllRequestsReceiver
 {
 	public:
+		virtual void CalibrationRequested() = 0;
 		virtual void VolumeGetRequested() = 0;
 		virtual void VolumeSetRequested(float volume) = 0;
 };

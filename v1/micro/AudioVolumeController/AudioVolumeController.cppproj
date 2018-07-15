@@ -146,7 +146,6 @@
   <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
   <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
   <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.compiler.miscellaneous.OtherFlags>-std=c++11</avrgcc.compiler.miscellaneous.OtherFlags>
   <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
   <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
   <avrgcccpp.compiler.symbols.DefSymbols>
@@ -183,6 +182,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="include\libraries\Wire\src\utility\twi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\Wire\src\Wire.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Accelerometer.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -207,6 +212,12 @@
     <Compile Include="src\DataSender.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\libraries\Wire\src\utility\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\Wire\src\Wire.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\main.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -216,7 +227,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="include\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\Wire\" />
+    <Folder Include="include\libraries\Wire\src\" />
+    <Folder Include="include\libraries\Wire\src\utility\" />
     <Folder Include="src\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\Wire\" />
+    <Folder Include="src\libraries\Wire\src\" />
+    <Folder Include="src\libraries\Wire\src\utility\" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

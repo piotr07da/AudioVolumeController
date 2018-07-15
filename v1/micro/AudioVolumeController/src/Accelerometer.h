@@ -15,6 +15,9 @@ class Accelerometer
 {
 	public:
 		void Setup();
+		bool ReadAxisAcceleration(uint8_t axisIndex, float* acceleration);
+
+	private:
 		bool ReadRegister(uint8_t registerAddress, uint8_t* byte);
 
 };
